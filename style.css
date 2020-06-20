@@ -6,36 +6,100 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    
+    font-family: 'Bungee', cursive;
+    font-size: 30px;
+    font-style: bold;
+    margin: 5px;
+    color: rgba(255, 0, 0, 1);
+    outline: yellow;
+
+}
+main {
+    justify-content: space-evenly;
+    display: flex;
     flex-direction: row;
 }
 .container {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
-    width: 700px;
-    height: 700px;
+    width: 50vw;
+    height: 50vw;
     padding: 4px;
-    border: 10px solid red;
+    border: 25px solid red;
+    border-radius: 15px;
     margin: 5px;
+    margin-right: 8vw;
 }
 .square {
-    border-top : solid 1px black;
-    border-right: solid 1px black;
+    border-top : solid 1px rgba(0, 0, 0, .7);
+    border-right: solid 1px rgba(0, 0, 0, .7);
     height: 1fr;
     width: 1fr;  
 }
-.resetBtn {
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    margin-top: 40px;
+    margin-right: 5px;
+
+}
+.colorBtn, .shadeBtn, .blackBtn, .resetBtn {
+    font-family: 'Bungee', cursive;
     height: 30px;
     width: 100px;
     line-height: 7px;
     text-align: center;
     font-size: 13px;
     font-style: bold;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     padding: 5px;
     border: none;
     border-radius: 5px;
-    background-color: rgba(255, 0, 0, 1);
     color: white;
+    margin: 10px;
+    cursor: pointer;
+}
+.colorBtn {
+    background-image: linear-gradient(30deg, red,orange,yellow,green,blue,indigo,violet);
+}
+.colorBtn:hover {
+    animation-name: rainbow;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+}
+@keyframes rainbow {
+    30% {
+    background-image: linear-gradient(30deg, indigo, violet, red,orange,yellow,green,blue);
+    }
+    60% {
+    background-image: linear-gradient(30deg, green, blue, indigo, violet, red,orange,yellow);
+    }
+    90% {
+    background-image: linear-gradient(30deg, orange, yellow, green, blue, indigo, violet, red);
+
+    }
+}
+.blackBtn:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+.shadeBtn {
+    background-color: rgba(0, 0, 0, .4);
+}
+.shadeBtn:hover {
+    background-color: rgba(0, 0, 0, .6);
+}
+.blackBtn {
+    background-color: rgba(0, 0, 0, .80); 
+}
+.resetBtn {
+    background-color: rgba(255, 0, 0, 1);
+    
 }
 .resetBtn:hover {
     background-color: rgb(167, 27, 27);
